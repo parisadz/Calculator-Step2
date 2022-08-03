@@ -7,7 +7,7 @@
 
 :root {
   --background: #f3f3f3;
-  --dark-btn: #f7f7f7;
+  --dark-btn: #e8e8e8;
   --num-btn: rgb(253, 253, 253);
   --hover-gray: #e1e1e1;
   --menu-hover: #e3e3e3;
@@ -65,9 +65,32 @@ h1 {
 }
 
 .standard {
-  width: 60%;
+  width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: row;
+}
+
+.menu,
+.history-icon {
+  width: 39px;
+  height: 39px;
+  padding: 10px;
+}
+
+.history-icon {
+  justify-content: center;
+  align-items: center;
+}
+
+.menu:hover {
+  background-color: var(--menu-hover);
+}
+
+.stand {
+  margin-left: 5px;
+  margin-top: 7px;
+  font-size: 1.3em;
 }
 
 .number {
@@ -83,6 +106,32 @@ h1 {
   min-height: 39px;
   display: flex;
   justify-content: space-between;
+}
+
+.small {
+  width: 100%;
+  height: 18%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-btn-ms {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+  max-width: 550px;
+}
+
+.small-ms {
+  height: 90%;
+  width: 19%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  border: none;
+  background-color: transparent;
 }
 
 #buttons {
@@ -119,48 +168,6 @@ h1 {
 
 .Btn:hover {
   background-color: var(--hover-gray);
-}
-
-.menu {
-  width: 39px;
-  height: 39px;
-  padding: 10px;
-}
-
-.menu:hover {
-  background-color: var(--menu-hover);
-}
-
-.standard-p {
-  margin-left: 5px;
-  margin-top: 7px;
-  font-size: 1.3em;
-}
-
-.small {
-  width: 100%;
-  height: 18%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.small-btn-ms {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: space-evenly;
-  max-width: 550px;
-}
-
-.small-ms {
-  height: 90%;
-  width: 19%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.8em;
-  border: none;
-  background-color: transparent;
 }
 
 .active:hover {
@@ -228,9 +235,17 @@ h1 {
       "buttons";
   }
 
+  .history-icon {
+    display: block;
+  }
+
   #history {
     display: none;
     grid-area: history;
+  }
+
+  .plus {
+    display: block;
   }
 }
 
@@ -242,12 +257,26 @@ h1 {
       "result history"
       "buttons history";
   }
+
   #history {
     display: block;
     grid-area: history;
   }
+
   .Btn {
     font-size: 1.5rem;
+  }
+
+  .small-btn-ms {
+    font-size: 1.2rem;
+  }
+
+  .history-icon {
+    display: none;
+    align-self: flex-end;
+  }
+  .plus {
+    display: none;
   }
 }
 
