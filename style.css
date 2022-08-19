@@ -20,7 +20,7 @@
   width: 100vw;
   display: grid;
   grid-template-columns: minmax(300px, 100%);
-  grid-auto-rows: minmax(33px, 4%) minmax(120px, 33%) minmax(257px, 62%);
+  grid-template-rows: minmax(33px, 5%) minmax(120px, 33%) minmax(257px, 62%);
   grid-template-areas:
     "header"
     "result"
