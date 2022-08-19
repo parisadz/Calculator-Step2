@@ -19,12 +19,14 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 77% 23%;
-  grid-auto-rows: 30px 1fr minmax(420px, 2fr);
+  grid-template-columns: minmax(300px, 100%);
+  grid-auto-rows: minmax(33px, 4%) minmax(120px, 33%) minmax(257px, 62%);
   grid-template-areas:
-    "header header"
-    "result history"
-    "buttons history";
+    "header"
+    "result"
+    "buttons";
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 #header {
@@ -81,15 +83,20 @@ h1 {
 .history-icon {
   justify-content: center;
   align-items: center;
+  margin-left: auto;
 }
 
 .menu:hover {
   background-color: var(--menu-hover);
 }
 
+.history-icon:hover {
+  background-color: var(--menu-hover);
+}
+
 .stand {
   margin-left: 5px;
-  margin-top: 7px;
+  margin-top: 4px;
   font-size: 1.3em;
 }
 
@@ -106,6 +113,7 @@ h1 {
   min-height: 39px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .small {
@@ -222,36 +230,9 @@ h1 {
   order: -4;
 }
 
-.arrow {
-  margin-bottom: 10px;
-}
-
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
   #container {
-    grid-template-columns: minmax(57%, auto);
-    grid-template-areas:
-      "header"
-      "result"
-      "buttons";
-  }
-
-  .history-icon {
-    display: block;
-  }
-
-  #history {
-    display: none;
-    grid-area: history;
-  }
-
-  .plus {
-    display: block;
-  }
-}
-
-@media (min-width: 740px) {
-  #container {
-    grid-template-columns: 77% minmax(auto, 320px);
+    grid-template-columns: minmax(57%, auto) minmax(43%, 320px);
     grid-template-areas:
       "header header"
       "result history"
@@ -263,35 +244,38 @@ h1 {
     grid-area: history;
   }
 
-  .Btn {
-    font-size: 1.5rem;
-  }
-
-  .small-btn-ms {
-    font-size: 1.2rem;
+  .extera-m {
+    display: none;
   }
 
   .history-icon {
     display: none;
-    align-self: flex-end;
   }
-  .plus {
-    display: none;
+
+  .small-btn-ms {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
-@media (min-width: 1024px) and (min-height: 620px) {
+@media screen and (min-width: 740px) {
   #container {
-    grid-template-columns: 77% 23%;
+    grid-template-columns: auto 320px;
   }
 
+  .Btn {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-height: 620px) {
   #buttons .btnhide {
     display: block;
   }
 
   .Btn {
-    width: 19.7%;
-    height: 19.7%;
+    width: 19.6%;
+    height: 19.2%;
     order: 1;
   }
 }
